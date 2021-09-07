@@ -408,11 +408,11 @@
             <div id="articleContent">
                 <p>在使用 git 的时候，遇到需要创建多个 ssh key 的需求，一个用来 git hub 项目，一个用来 git lab 项目；<br>之前如果已将创建过一个 ssh key，那么在创建第二个的时候，要修改默认名称，然后增加配置文件；<br>之前创建 ssh key 生成了如下两个文件，一个私钥，一个公钥<br>id_rsa<br>id_rsa.pub<br>​</p>
 <p>我们要生成新的一个 ssh key，由于路径跟之前的一直，所以要改个名字<br>id_rsa_gitlab<br>id_rsa_gitlab.pub<br>​</p>
-<p>具体如下<br>ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C “<a href="mailto:&#97;&#x40;&#x62;&#x2e;&#x63;&#111;&#109;">&#97;&#x40;&#x62;&#x2e;&#x63;&#111;&#109;</a>“<br>​</p>
+<p>具体如下<br>ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C “<a href="mailto:&#x61;&#x40;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x61;&#x40;&#x62;&#x2e;&#99;&#x6f;&#109;</a>“<br>​</p>
 <p>注意：因为 SSH 默认只读取 id_rsa,为了让 SSH 识别新的私钥,需要使用命令将其添加到 SSH agent,命令如下：<br>ssh-add ~/.ssh/id_rsa<br>ssh-add ~/.ssh/id_rsa_gitlab<br>​</p>
 <p>若执行 ssh-add 时提示“Could not open a connection to your authentication agent”,则执行下面的命令：<br>ssh-agent bash<br>然后再运行 ssh-add 命令(可以通过 ssh-add -l 查看私钥列表)；<br>​</p>
 <p>接着修改配置文件：<br>在~./ssh 目录下新建一个 config 文件,命令如下：<br>touch config<br>​</p>
-<p>配置文件如下：<br>#github<br>Host github.com<br>IdentityFile ~/.ssh/id_rsa<br>User <a href="mailto:&#97;&#64;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#97;&#64;&#x62;&#x2e;&#x63;&#x6f;&#109;</a><br>#gitlab<br>Host gitlab.com<br>IdentityFile ~/.ssh/id_rsa_gitlab<br>User <a href="mailto:&#97;&#64;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#97;&#64;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p>配置文件如下：<br>#github<br>Host github.com<br>IdentityFile ~/.ssh/id_rsa<br>User <a href="mailto:&#97;&#x40;&#98;&#46;&#99;&#x6f;&#109;">&#97;&#x40;&#98;&#46;&#99;&#x6f;&#109;</a><br>#gitlab<br>Host gitlab.com<br>IdentityFile ~/.ssh/id_rsa_gitlab<br>User <a href="mailto:&#97;&#x40;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#97;&#x40;&#x62;&#x2e;&#x63;&#x6f;&#109;</a></p>
 
                 
             </div>
@@ -520,18 +520,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/26/yuque/Git%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AAssh%20key/">
+                <a href="/2021/09/07/yuque/allure%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A%E9%A1%B5%E9%9D%A2%E7%A9%BA%E7%99%BD%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zuolh/zuolh.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="Git创建多个ssh key">
+                        <img src="https://cdn.jsdelivr.net/gh/zuolh/zuolh.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="allure命令行生成报告页面空白问题">
                         
-                        <span class="card-title">Git创建多个ssh key</span>
+                        <span class="card-title">allure命令行生成报告页面空白问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -541,9 +540,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -552,7 +551,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

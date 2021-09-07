@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>allure命令行生成报告页面空白问题</title>
+      <link href="/2021/09/07/yuque/allure%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A%E9%A1%B5%E9%9D%A2%E7%A9%BA%E7%99%BD%E9%97%AE%E9%A2%98/"/>
+      <url>/2021/09/07/yuque/allure%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A%E9%A1%B5%E9%9D%A2%E7%A9%BA%E7%99%BD%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/"></a><br>本人一开始下载的版本是 2.13.10，后面经过验证发现是版本过高，导致打开报告出错了，后来下载了 2.11.0 版本；<br>​</p><p>其他版本 allure 插件下载地址：<a href="https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/">https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/</a><br><img src="https://cdn.nlark.com/yuque/0/2021/png/1308119/1631001503711-f2b8515b-99fb-44db-99e7-6ef35704731b.png#clientId=ub3c96da5-92e8-4&from=paste&height=326&id=u9501f01a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=651&originWidth=975&originalType=binary%E2%88%B6=1&size=64028&status=done&style=none&taskId=u94be5fd2-f5aa-453e-b590-ff50d9d87a3&width=487.5" alt="image.png"><br>重新配置好环境变量，验证版本<br><img src="https://cdn.nlark.com/yuque/0/2021/png/1308119/1631001573641-bb3af674-ad72-4237-8bbf-d354e335787c.png#clientId=ub3c96da5-92e8-4&from=paste&height=54&id=uf7683962&margin=%5Bobject%20Object%5D&name=image.png&originHeight=53&originWidth=388&originalType=binary%E2%88%B6=1&size=3966&status=done&style=none&taskId=u568af125-1b08-486c-bdde-b2bddd6ed41&width=394" alt="image.png"></p><p>再次在项目目录下，通过命令打开测试报告：allure serve target/allure-results<br>​</p><p><img src="https://cdn.nlark.com/yuque/0/2021/png/1308119/1631001677764-abcdc12d-1774-4402-bf50-3ca7d8822bca.png#clientId=ub3c96da5-92e8-4&from=paste&height=315&id=u4ecc371e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=630&originWidth=1817&originalType=binary%E2%88%B6=1&size=87428&status=done&style=none&taskId=uc25b0ee2-ae22-449b-a963-582cc2a62e8&width=908.5" alt="image.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git创建多个ssh key</title>
       <link href="/2021/08/26/yuque/Git%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AAssh%20key/"/>
       <url>/2021/08/26/yuque/Git%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AAssh%20key/</url>
       
-        <content type="html"><![CDATA[<p>在使用 git 的时候，遇到需要创建多个 ssh key 的需求，一个用来 git hub 项目，一个用来 git lab 项目；<br>之前如果已将创建过一个 ssh key，那么在创建第二个的时候，要修改默认名称，然后增加配置文件；<br>之前创建 ssh key 生成了如下两个文件，一个私钥，一个公钥<br>id_rsa<br>id_rsa.pub<br>​</p><p>我们要生成新的一个 ssh key，由于路径跟之前的一直，所以要改个名字<br>id_rsa_gitlab<br>id_rsa_gitlab.pub<br>​</p><p>具体如下<br>ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C “<a href="mailto:&#97;&#x40;&#x62;&#x2e;&#x63;&#111;&#109;">&#97;&#x40;&#x62;&#x2e;&#x63;&#111;&#109;</a>“<br>​</p><p>注意：因为 SSH 默认只读取 id_rsa,为了让 SSH 识别新的私钥,需要使用命令将其添加到 SSH agent,命令如下：<br>ssh-add ~/.ssh/id_rsa<br>ssh-add ~/.ssh/id_rsa_gitlab<br>​</p><p>若执行 ssh-add 时提示“Could not open a connection to your authentication agent”,则执行下面的命令：<br>ssh-agent bash<br>然后再运行 ssh-add 命令(可以通过 ssh-add -l 查看私钥列表)；<br>​</p><p>接着修改配置文件：<br>在~./ssh 目录下新建一个 config 文件,命令如下：<br>touch config<br>​</p><p>配置文件如下：<br>#github<br>Host github.com<br>IdentityFile ~/.ssh/id_rsa<br>User <a href="mailto:&#97;&#64;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#97;&#64;&#x62;&#x2e;&#x63;&#x6f;&#109;</a><br>#gitlab<br>Host gitlab.com<br>IdentityFile ~/.ssh/id_rsa_gitlab<br>User <a href="mailto:&#97;&#64;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#97;&#64;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a></p>]]></content>
+        <content type="html"><![CDATA[<p>在使用 git 的时候，遇到需要创建多个 ssh key 的需求，一个用来 git hub 项目，一个用来 git lab 项目；<br>之前如果已将创建过一个 ssh key，那么在创建第二个的时候，要修改默认名称，然后增加配置文件；<br>之前创建 ssh key 生成了如下两个文件，一个私钥，一个公钥<br>id_rsa<br>id_rsa.pub<br>​</p><p>我们要生成新的一个 ssh key，由于路径跟之前的一直，所以要改个名字<br>id_rsa_gitlab<br>id_rsa_gitlab.pub<br>​</p><p>具体如下<br>ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C “<a href="mailto:&#x61;&#x40;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x61;&#x40;&#x62;&#x2e;&#99;&#x6f;&#109;</a>“<br>​</p><p>注意：因为 SSH 默认只读取 id_rsa,为了让 SSH 识别新的私钥,需要使用命令将其添加到 SSH agent,命令如下：<br>ssh-add ~/.ssh/id_rsa<br>ssh-add ~/.ssh/id_rsa_gitlab<br>​</p><p>若执行 ssh-add 时提示“Could not open a connection to your authentication agent”,则执行下面的命令：<br>ssh-agent bash<br>然后再运行 ssh-add 命令(可以通过 ssh-add -l 查看私钥列表)；<br>​</p><p>接着修改配置文件：<br>在~./ssh 目录下新建一个 config 文件,命令如下：<br>touch config<br>​</p><p>配置文件如下：<br>#github<br>Host github.com<br>IdentityFile ~/.ssh/id_rsa<br>User <a href="mailto:&#97;&#x40;&#98;&#46;&#99;&#x6f;&#109;">&#97;&#x40;&#98;&#46;&#99;&#x6f;&#109;</a><br>#gitlab<br>Host gitlab.com<br>IdentityFile ~/.ssh/id_rsa_gitlab<br>User <a href="mailto:&#97;&#x40;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#97;&#x40;&#x62;&#x2e;&#x63;&#x6f;&#109;</a></p>]]></content>
       
       
       
